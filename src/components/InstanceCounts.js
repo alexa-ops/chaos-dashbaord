@@ -4,6 +4,8 @@ import { Doughnut } from 'react-chartjs';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
+import colorHelper from './color-helper'
+
 const InstancesQuery = gql`query InstanceCount($selector: CountSelector) { 
     countBy(selector: $selector) { 
         total, 
@@ -14,6 +16,14 @@ const InstancesQuery = gql`query InstanceCount($selector: CountSelector) {
 const chartOptions = { 
     showTooltips: true 
 }
+
+const colors = {
+    red: '#FE5A59',
+    blue: '#2AB7CA',
+    yellow: '#FED766',
+    green: '#3CD070',
+}
+
 
 const InstancesChart = ({ data }) =>{
     if(data.loading) {
@@ -41,13 +51,12 @@ const InstancesChart = ({ data }) =>{
     const chartData = countBy.groups.map(c => ({
         label: c.key,
         value: c.value,
-        // color: '#F7464A',
-        // highlight: '#FF5A5E',
+        color: colorHelper.getColorByKey(c.key),
     }));
 
     return (
         <div>
-            <Doughnut data={chartData} options={chartOptions} height="200" width="350"/>
+            <Doughnut data={chartData} options={chartOptions} height="200" />
         </div>
     )
 }

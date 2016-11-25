@@ -5,7 +5,7 @@ import React from 'react'
 import Dashboard from './Dashboard';
 
 const App = () => (
-  <div className="container">
+  <div className="app container">
     <div>
       <h1>Chaos Alexa Dashboard</h1>
     </div>
