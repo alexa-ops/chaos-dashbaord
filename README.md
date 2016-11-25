@@ -1,3 +1,3 @@
-# chaos-dashbaord
+# chaos-dashboard
 
-Describe chaos-dashbaord here.
+Describe chaos-dashboard here.

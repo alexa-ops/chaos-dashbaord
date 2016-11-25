@@ -1,7 +1,7 @@
 {
-  "name": "chaos-dashbaord",
+  "name": "chaos-dashboard",
   "version": "1.0.0",
-  "description": "Describe chaos-dashbaord here",
+  "description": "Describe chaos-dashboard here",
   "private": true,
   "scripts": {
     "build": "nwb build-react-app",

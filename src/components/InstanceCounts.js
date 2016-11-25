@@ -53,5 +53,8 @@ const InstancesChart = ({ data }) =>{
 }
 
 export default graphql(InstancesQuery, {
-  options: ({ selector }) => ({ variables: { selector } }),
+    options: ({ selector }) => ({
+        pollInterval: 30 * 1000,
+        variables: { selector } 
+    }),
 })(InstancesChart);

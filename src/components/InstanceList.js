@@ -74,5 +74,8 @@ const InstancesList = ({ data }) =>{
 }
 
 export default graphql(InstancesQuery, {
-  options: ({ state }) => ({ variables: { state } }),
+    options: ({ state }) => ({ 
+        pollInterval: 30 * 1000,
+        variables: { state } 
+    }),
 })(InstancesList);
